@@ -1,0 +1,42 @@
+// variables
+// colors
+/* $main-color: 0, 174, 239;
+$second-color: 240, 124, 0;
+$third-color: 0, 120, 163; */
+
+$white:rgba(255, 255, 255, 1);
+$black:rgba(0, 0, 0, 1);
+$black2:rgba(23, 23, 23, 1);
+$black3: rgba(31, 31, 31, 1);
+$grey: rgba(102, 102, 102, 1);
+
+$headerFont: 'Poppins', sans-serif;
+$bodyFont: 'Roboto', sans-serif;
+
+@mixin hover-color($color) {
+    &:hover{
+        color: $color;
+    }
+}
+@mixin backgroundSize($size:cover) {
+    background-size: $size;
+    -webkit-background-size: $size;
+    -moz-background-size: $size;
+    -o-background-size: $size;
+}
+
+// can add 'fixed' to end of background property 
+@mixin parallax-background($file) {
+    background: url($file) no-repeat center center;
+    @include backgroundSize;
+}
+
+%flexRow {
+    display:inline-flex;
+    flex-direction: row;
+}
+
+%flexColumn {
+    display:inline-flex;
+    flex-direction: column;
+}

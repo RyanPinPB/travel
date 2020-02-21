@@ -1,0 +1,143 @@
+div.places {
+    position: relative;
+}
+
+div.location {
+    margin: 40px 0px;
+    img.location-picture {
+        min-height: 400px;
+        object-fit:cover;
+    }
+}
+
+// if you want text to sit on background image before 1025px - adjust linear gradient and text shadow and positioning layout
+
+/* img.antelope {
+    background: linear-gradient(fade-out($color: $grey, $amount: .95), fade-out($color: $grey, $amount: .95) ), url(../images/home/canyon.png);
+    background-size: cover;
+    background-position: center;
+}
+
+img.torres {
+    background: linear-gradient(fade-out($color: $grey, $amount: .95), fade-out($color: $grey, $amount: .95) ), url(../images/home/lake.png);
+    background-size: cover;
+    background-position: center;
+} */
+
+h2.location-name {
+    opacity:1;
+    padding:20px;
+    margin:0;
+    line-height: 1;
+}
+
+p.location-description {
+    font-size:20px;
+    padding:10px 10px 20px 10px;
+    margin:0;
+}
+
+// MEDIA QUERIES 
+
+@media (min-width:400px) {
+}
+
+@media (min-width:450px) {
+}
+
+@media (min-width:500px) {
+}
+
+@media (min-width:675px) {
+}
+
+@media (min-width:769px) {
+    div.location {
+        margin:40px 60px;
+        h2 {
+            text-align:left;
+        }
+    }
+}
+
+@media (min-width:1025px) {
+    section.places {
+        position:relative;
+        margin:200px 0px;
+        .section-title {
+            position: absolute;
+            left:0;
+            top:-150px;
+            margin:0;
+        }
+        div.location{
+            display:grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-column-gap: 16px;
+            margin-bottom: 140px;
+            min-height: 800px;
+            text-shadow: 2px 2px fade-out($color: $black, $amount: .7);
+            .location-picture {
+                min-height:800px;
+            }
+            .text-align {
+                text-align: start;
+            }
+            h2 {
+                font-size: 5rem;
+                padding-left:0;
+            }
+            p {
+                padding-left: 0;
+                font-size: 20px;
+            }
+            img.antelope {
+                grid-column: 5 / 13;
+                grid-row: 1 / 11;
+
+            }
+            h2.antelope {
+                grid-column: 1 / 10;
+                grid-row: 8 / 9;
+            }
+            p.antelope {
+                grid-column: 1 / 6;
+                grid-row: 9 / 10;
+            }
+            img.torres {
+                grid-column: 1 / 9;
+                grid-row: 1 / 11;
+            }
+            h2.torres {
+                grid-column: 7 / 12;
+                grid-row: 8 / 9;
+            }
+            p.torres {
+                grid-column: 7 / 13;
+                grid-row: 9 / 10;
+            }
+        }
+    }
+}
+
+@media (min-width:1350px) {
+    section.places {
+        margin:400px 0px;
+        .section-title {
+            top:-190px;
+        }
+    }
+
+    div.location {
+        margin:40px 140px;
+    }
+}
+
+@media (min-width:1600px) {
+    section.places {
+        margin:400px 0px;
+        .section-title {
+            top:-220px;
+        }
+    }
+}

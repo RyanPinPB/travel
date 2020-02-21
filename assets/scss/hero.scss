@@ -1,0 +1,109 @@
+.hero {
+    position: relative;
+    height:100vh;
+    .background {
+        position: absolute;
+        background: url(../images/home/mountainscape.jpg);
+        background-position:center;
+        background-size: cover;
+        height:100%;
+        width:100%;
+    }
+
+    .hero-text {
+        position: absolute;
+        color:$white;
+        text-align: center;
+        top:120px;
+        left:0;
+        right:0;
+        margin:0;
+        opacity:.4;
+        transition: opacity .1s linear;
+    }
+
+    .dude {
+        position: absolute;
+        background: url(../images/home/dude.png);
+        background-repeat: no-repeat;
+        background-size:cover;
+        bottom:0px;
+        height:90%;
+        width: calc(100% + 150px);
+        left:-150px;
+        // background-attachment: fixed;
+    }
+
+    .fade-to-black {
+        position:absolute;
+        width: 100%;
+        height:35%;
+        bottom: 0;
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.5) 75%, rgba(0,0,0,1) 100%);
+    }
+}
+
+@media (min-width:400px) {
+    .hero-text {
+        top:130px;
+    }
+}
+
+@media (min-width:450px) {
+
+}
+
+@media (min-width:500px) {
+    .hero {
+        .hero-text {
+            top:145px;
+        }
+
+    }
+}
+
+@media (min-width:675px) {
+    .hero {
+        .hero-text {
+            top:160px;
+        }
+    }
+}
+
+@media (min-width:769px) {
+    .hero {
+        .hero-text {
+            top:200px;
+        }
+        .dude {
+            width:100%;
+            left:0;
+            height:100%;
+        }
+    }
+}
+
+@media (min-width:1025px) {
+    .hero {
+        .hero-text {
+            top:200px;
+        }
+
+    }
+}
+
+@media (min-width:1350px) {
+    .hero {
+        .hero-text {
+            top:200px;
+        }
+    }
+}
+
+@media (min-width:1600px) {
+    .hero {
+        .hero-text {
+            top:150px;
+        }
+    }
+}

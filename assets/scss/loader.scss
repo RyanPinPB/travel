@@ -1,0 +1,188 @@
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+#loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 200px;
+    height: 200px;
+    margin: -100px 0 0 -100px;
+    z-index: 1001;
+    // border-radius: 50%;
+    // border: 3px solid transparent;
+    // border-top-color: $black3;
+    // -webkit-animation: spin 2s linear infinite;
+    // animation: spin 2s linear infinite;
+    // background: url(../icons/PDM-white-bar-logo.svg) center center no-repeat; //using svg instead of background image
+    // background-size: 212px 150px;
+
+    .loader-logo {
+        width:200px;
+        height:200px;
+        fill: fade-out($color: $white, $amount: 0);
+        animation: pulse 3s infinite;
+        transition: all .05s ease-in-out;
+    }
+}
+
+/* #loader:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: $grey;
+
+    -webkit-animation: spin 3s linear infinite;
+    animation: spin 3s linear infinite;
+}
+ 
+#loader:after {
+    content: "";
+    color: $white;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: $white;
+
+    -webkit-animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+} */
+
+@-webkit-keyframes spin {
+    0%   { 
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes spin {
+    0%   { 
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+#loader-wrapper .loader-section {
+    position: fixed;
+    top: 0;
+    width: 51%;
+    height: 100%;
+    background: $black3;
+    z-index: 1000;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+}
+
+#loader-wrapper .loader-section.section-left {
+    left: 0;
+}
+
+#loader-wrapper .loader-section.section-right {
+    right: 0;
+}
+
+/* Loaded */
+.loaded #loader-wrapper .loader-section.section-left {
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+
+    -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);  
+    transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+.loaded #loader-wrapper .loader-section.section-right {
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
+
+    -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);  
+    transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+    
+.loaded #loader {
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-out;  
+    transition: all 0.3s ease-out;
+}
+
+.loaded #loader-wrapper {
+    visibility: hidden;
+
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+
+    -webkit-transition: all 0.3s 1s ease-out;  
+    transition: all 0.3s 1s ease-out;
+}
+
+/* JavaScript Turned Off? add no-js class */
+.no-js #loader-wrapper {
+    display: none;
+}
+
+
+@media (min-width: 769px) {
+    #loader {
+        width: 300px;
+        height: 300px;
+        margin: -150px 0 0 -150px;
+    }
+}
+
+@media (min-width:1025px) {
+    #loader {
+        width: 350px;
+        height: 350px;
+        margin: -175px 0 0 -175px;
+        .loader-logo {
+            width:300px;
+            height:300px;
+        }
+    }
+
+}
+
+@media (min-width:1350px) {
+    #loader {
+        width: 500px;
+        height: 500px;
+        margin: -250px 0 0 -250px;
+        .loader-logo {
+            width:400px;
+            height:400px;
+        }
+    }
+
+}

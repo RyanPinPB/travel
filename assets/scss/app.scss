@@ -1,0 +1,46 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Variables
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+    ## Galleries
+# Custom Styles
+    ## Custom text and animations
+    ## Preloader
+    ## Header
+    ## Hero
+    ## Aside
+    ## People
+    ## Places
+    ## Gallery
+    ## Footer
+--------------------------------------------------------------*/
+
+@import './_variables';
+@import './normalize';
+@import './custom';
+@import './loader';
+@import './header';
+@import './hero';
+@import './aside';
+@import './bio';
+@import './people';
+@import './places';
+@import './gallery';
+@import './footer';

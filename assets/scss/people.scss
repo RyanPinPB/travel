@@ -1,0 +1,182 @@
+.people {
+    position: relative;
+    display: flex;
+    flex-direction:column;
+}
+
+.carousel-container {
+    position:relative;
+    margin:0px 10px;
+}
+
+#owl-people .item{
+    color: $white;
+    text-align: center;
+    &:hover .view-bio{
+        transform: scale(1.05);
+    }
+}
+
+.person-image {
+    min-height:40vh;
+    max-height:60vh;
+    background-size:cover;
+    background-position: center;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.person-image.bourdain {
+    background-image: url(../images/home/bourdain.jpg);
+}
+
+.person-image.huang {
+    background-image: url(../images/home/huang.jpg);
+}
+
+.person-image.bronson {
+    background-image: url(../images/home/bronson.png);
+}
+
+.person-image.neistat {
+    background-image: url(../images/home/neistat.jpg);
+}
+
+.person-info {
+    display:flex;
+    flex-direction: column;
+    background-color: $black2;
+    justify-content: space-evenly;
+    height:150px;
+    border-radius:0px 0px 10px 10px ;
+    text-align: center;
+}
+
+.person-name {
+    font-family: $headerFont;
+    font-weight:800;
+    letter-spacing:1.5px;
+}
+
+.view-bio {
+    padding:20px 60px;
+    border-radius: 20px;
+    background-color: $black3;
+    color: $white;
+    font-size: .7rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    width:fit-content;
+    margin:0 auto;
+    border:none;
+    outline:none;
+    box-shadow: 4px 4px 8px fade-out($color: $black, $amount: .4);
+    transition: transform .3s ease-in-out;
+    &:hover {
+        animation: pulse 1.5s infinite;
+    }
+}
+
+.customNavigation{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    color: $white;
+    margin-bottom:20px;
+    span.nav-title {
+        letter-spacing: 2.4px;
+        margin-right:20px;
+    }
+}
+
+
+// MEDIA QUERIES 
+
+@media (min-width:400px) {
+    .carousel-container{
+        margin: 0px 25px;
+    }
+}
+
+@media (min-width:450px) {
+    #owl-people .person-image{
+        height:470px;
+    }
+}
+
+@media (min-width:500px) {
+    .carousel-container {
+        max-width:450px;
+        margin: 0px auto;
+    }
+
+    #owl-people .item{
+        max-width:450px;
+    }
+}
+
+@media (min-width:675px) {
+}
+
+@media (min-width:769px) {
+    .carousel-container {
+        max-width:100%;
+        margin:0px 50px;
+    }
+
+    .customNavigation{
+        span.nav-title {
+            margin-left:10px;
+            margin-right:60px;
+        }
+    }
+
+    #owl-people .item{
+        margin: 0px 10px;
+        max-width:450px;
+    }
+
+    .person-name {
+        font-size:1.25rem;
+        letter-spacing:1.5px;
+    }
+}
+
+@media (min-width:1025px) {
+    section.people {
+        margin-bottom:200px;
+        h2.section-title {
+            position: absolute;
+            right:0;
+            top:-105px;
+            margin:0;
+        }
+    }
+}
+
+@media (min-width:1350px) {
+    .carousel-container {
+        margin:0px 0px 0px 140px;
+    }
+
+    section.people {
+        h2.section-title {
+            top:-160px;
+        }
+    }
+    .person-info {
+        height: 250px;
+        .person-name {
+            font-size: 1.5rem;
+        }
+    }
+
+
+}
+
+@media (min-width:1600px) {
+    section.people {
+        h2.section-title {
+            top:-200px;
+        }
+    }
+}
