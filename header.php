@@ -25,7 +25,7 @@
 
 <body <?php body_class(); ?>>
 
-<!--     <div id="loader-wrapper">
+    <div id="loader-wrapper">
         <div id="loader">
 			<svg class="loader-logo" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 		width="556.568px" height="556.568px" viewBox="0 0 556.568 556.568" style="enable-background:new 0 0 556.568 556.568;"
@@ -45,7 +45,7 @@
 		</div>
         <div class="loader-section section-left"></div>
         <div class="loader-section section-right"></div>
-    </div> -->
+    </div>
 
 	<div id="page" class="site">
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'travel' ); ?></a>

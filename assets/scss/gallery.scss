@@ -9,7 +9,12 @@
         width: 100%;
         height: 250px;
         object-fit: cover;
-        padding:1px;
+        position: relative;
+    }
+
+    .item-video {
+        display: flex;
+        justify-content: flex-end;
     }
 
 }

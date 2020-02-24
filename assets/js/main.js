@@ -259,30 +259,31 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 
 /** =======================================================================================
-    Fade hero text and change position of dude on scroll
+    Fade hero text and change position of dude on scroll on screens bigger than tablet
 ========================================================================================= */
+if($(window).width() > 768) {
+    document.addEventListener('scroll', function() {
+        let currScrollPos2 = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        if (currScrollPos2 > 1) {
+            document.querySelector('.hero-text').style.opacity = -currScrollPos2 / 350 + 1.1;
+        }
+        }
+    );
 
-document.addEventListener('scroll', function() {
-    let currScrollPos2 = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    if (currScrollPos2 > 1) {
-        document.querySelector('.hero-text').style.opacity = -currScrollPos2 / 350 + 1.1;
-    }
-    }
-);
+    function background_image_parallax($object, multiplier){
+        multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.15;
+        multiplier = 1 - multiplier;
 
-function background_image_parallax($object, multiplier){
-    multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.15;
-    multiplier = 1 - multiplier;
+        $object.css({"background-attatchment" : "fixed"});
+            $(window).scroll(function(){
+            let from_top = $(document).scrollTop(),
+            translateY = '0' +(multiplier * from_top).toFixed(2);
+            translateX = 0;
+            $object.css({'transform': 'translate3d(' + translateX +'px, ' +   translateY + 'px, 0)' }); 
+        });
+    };
 
-    $object.css({"background-attatchment" : "fixed"});
-        $(window).scroll(function(){
-        let from_top = $(document).scrollTop(),
-        translateY = '0' +(multiplier * from_top).toFixed(2);
-        translateX = 0;
-        $object.css({'transform': 'translate3d(' + translateX +'px, ' +   translateY + 'px, 0)' }); 
-    });
-};
+    background_image_parallax($(".dude"));
 
-background_image_parallax($(".dude"));
-
-background_image_parallax($(".hero-text"), .4);
+    background_image_parallax($(".hero-text"), .4);
+}

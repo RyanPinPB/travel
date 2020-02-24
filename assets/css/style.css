@@ -2483,7 +2483,11 @@ p.location-description {
   width: 100%;
   height: 250px;
   object-fit: cover;
-  padding: 1px;
+  position: relative;
+}
+#gallery .item-video {
+  display: flex;
+  justify-content: flex-end;
 }
 
 @media (min-width: 500px) {
@@ -2910,7 +2914,7 @@ button[type=submit]:hover {
   width: 50%;
 }
 
-#frm_field_8_container {
+.frm_full.last-full {
   padding-bottom: 40px;
 }
 

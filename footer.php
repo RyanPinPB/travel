@@ -19,7 +19,7 @@
 					<p class="form-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacus velit, venenatis sed orci a, sollicitudin sagittis orci. Curabitur a nisi at velit consequat tempor vel in leo. Aliquam erat volutpat. Donec semper ante massa, et mollis est sollicitudin quis. Pellentesque faucibus lacus vitae.</p>
 				</div>
 				<div class="footer-form">
-					<?php echo FrmFormsController::get_form_shortcode( array( 'id' => 1, 'title' => false, 'description' => false ) ); ?>
+					<?php echo FrmFormsController::get_form_shortcode( array( 'id' => 2, 'title' => false, 'description' => false ) ); ?>
 				</div>
 
 			</div>
