@@ -2478,16 +2478,13 @@ p.location-description {
 #gallery .customNavigation {
   justify-content: center;
 }
+#gallery img {
+  object-fit: cover;
+}
 #gallery img,
 #gallery .owl-item .video-iframe {
   width: 100%;
   height: 250px;
-  object-fit: cover;
-  position: relative;
-}
-#gallery .item-video {
-  display: flex;
-  justify-content: flex-end;
 }
 
 @media (min-width: 500px) {
@@ -2495,7 +2492,6 @@ p.location-description {
 #gallery .owl-item .video-iframe {
     width: 100%;
     height: 350px;
-    object-fit: cover;
   }
 }
 @media (min-width: 769px) {
@@ -2503,7 +2499,6 @@ p.location-description {
 #gallery .owl-item .video-iframe {
     width: 100%;
     height: 450px;
-    object-fit: cover;
   }
 }
 @media (min-width: 1025px) {

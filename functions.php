@@ -120,7 +120,7 @@ add_action( 'widgets_init', 'travel_widgets_init' );
  * Enqueue scripts and styles.
  */
 function travel_scripts() {
-	wp_enqueue_style( 'travel-style', get_template_directory_uri() . '/assets/css/style.css' );
+	wp_enqueue_style( 'travel-style', get_template_directory_uri() . '/assets/css/style.min.css' );
 
 	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800|Roboto:400,500,700,900&display=swap' ); 
 
@@ -136,7 +136,7 @@ function travel_scripts() {
 
 	wp_enqueue_script( 'travel-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', [], null, true );
 
-	wp_enqueue_script( 'main-js', get_template_directory_uri() . '/assets/js/main.js', [], null, true );
+	wp_enqueue_script( 'main-js', get_template_directory_uri() . '/assets/js/main.min.js', [], null, true );
 
 	wp_enqueue_script( 'owl-js', get_template_directory_uri() . '/assets/vendors/carousel/dist/owl.carousel.min.js', [], null, true );
 

@@ -88,12 +88,12 @@ if (get_field('gallery_videos')) {
             </div>
             <div id="owl-gallery" class="owl-carousel owl-theme">
                 <?php foreach($gallery_videos as $videos) { echo 
-                    '<div class="item-video gallery">
+                    '<div class="item-video gallery" style="align-items:flex-end">
                         <iframe class="video-iframe" width="100%" height="auto" src="' . $videos['video_link'] . '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>';}
                 ?>
                 <?php foreach($gallery_images as $images) { echo 
-                    '<div class="item gallery">
+                    '<div class="item gallery" style="position:relative">
                         <img class="" src="' . $images['gallery_image'] . '" alt="' . $images['image_alt'] . '" />
                     </div>';}
                 ?>
