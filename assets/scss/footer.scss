@@ -1,5 +1,40 @@
 .site-footer {
-    background: $black2;
+    background: $black3;
+    position: relative;
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        background: $black2;
+        padding: 10px;
+    }
+
+    .form-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .form-header {
+        color: $white;
+        opacity: 1;
+        margin:0;
+        padding:20px 0px 10px 0px;
+        font-size: 1.7rem;
+    }
+
+    .form-description {
+        color: $grey;
+        margin: 0;
+        padding:10px 0px 20px 0px;
+        line-height:1.2;
+        font-size: 1rem;
+    }
+
+    .footer-form {
+        width: 100%;
+    }
+
     .site-info {
         display: flex;
         flex-direction: column;
@@ -36,6 +71,51 @@
 
 @media (min-width: 769px) {
     .site-footer {
+        .form-container {
+            padding: 30px 60px;
+        }
+
+        .form-description {
+            padding:20px 0px 40px 0px;
+            line-height:1.2;
+            font-size: 1rem;
+        }
+
+        .footer-form {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .site-info {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            a.logo {
+                justify-content: center;
+                align-items: center;
+                svg.pdm-logo {
+                    padding:20px 20px 20px 60px;
+                    margin:0;
+                }
+            }
+            div.copyright {
+                justify-content: center;
+                align-items: center;
+                padding:20px 60px 20px 20px;
+                margin:0;
+            }
+        }
+    }
+}
+
+@media (min-width: 1025px) {
+    .site-footer {
+
+        .form-header {
+            padding:20px 0px 10px 0px;
+            font-size: 2rem;
+        }
+
         .site-info {
             flex-direction: row;
             justify-content: space-between;
@@ -60,6 +140,36 @@
 
 @media (min-width: 1350px) {
     .site-footer {
+
+        .form-container {
+            flex-direction: row;
+            padding: 60px 140px;
+        }
+
+        .form-text {
+            align-items: flex-start;
+            min-width: 560px;
+            padding-right: 60px;
+            max-width:600px;
+        }
+
+        .form-header {
+            padding:20px 0px 10px 0px;
+            font-size: 2.5rem;
+            text-align: start;
+        }
+
+        .form-description {
+            padding:10px 0px 20px 0px;
+            width:80%;
+            line-height:1.2;
+            font-size: 1rem;
+        }
+
+        .footer-form {
+            min-width:500px;
+        }
+
         .site-info {
             a.logo {
                 padding:20px 20px 20px 140px;
@@ -67,6 +177,42 @@
             div.copyright {
                 padding:20px 140px 20px 20px;
             }
+        }
+    }
+}
+
+@media (min-width: 1600px) {
+    .site-footer {
+
+        .form-container {
+            padding: 60px 140px;
+        }
+
+        .form-text {
+            max-width:1000px;
+        }
+
+        .form-header {
+            font-size: 3.3rem;
+        }
+
+        .form-description {
+            width:80%;
+            line-height:1.2;
+            font-size: 1rem;
+        }
+
+        .footer-form {
+            min-width:500px;
+        }
+    }
+}
+
+@media (min-width: 1600px) {
+    .site-footer {
+
+        .form-header {
+            font-size: 3.7rem;
         }
     }
 }

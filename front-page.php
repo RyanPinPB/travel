@@ -1,39 +1,38 @@
 <?php get_header() ?>
+<?php 
+
+// Declare variables for advanced custom fields
+
+if (get_field('person')) {
+    $person = get_field('person');
+}
+
+if (get_field('place')) {
+    $place = get_field('place');
+}
+
+if (get_field('gallery_images')) {
+    $gallery_images = get_field('gallery_images');
+}
+
+if (get_field('gallery_videos')) {
+    $gallery_videos = get_field('gallery_videos');
+}
+
+?>
 
 <section class="bio-overlay">
     <div class="bio-container">
-        <div class="bio bourdain">
-            <div class="bio-image"></div>
-            <div class="bio-info">
-                <h2 class="bio-name">Anthony Bourdain</h2>
-                <p class="bio-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacus velit, venenatis sed orci a, sollicitudin sagittis orci. Curabitur a nisi at velit consequat tempor vel in leo. Aliquam erat volutpat. Donec semper ante massa, et mollis est sollicitudin quis. Pellentesque faucibus lacus vitae tellus porta facilisis. Vestibulum porttitor accumsan eros vitae eleifend. Sed commodo efficitur risus at volutpat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur.</p>
-                <button class="close-bio">CLOSE BIO</button>
-            </div>
-        </div>
-        <div class="bio huang">
-            <div class="bio-image"></div>
-            <div class="bio-info">
-                <h2 class="bio-name">Eddie Huang</h2>
-                <p class="bio-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacus velit, venenatis sed orci a, sollicitudin sagittis orci. Curabitur a nisi at velit consequat tempor vel in leo. Aliquam erat volutpat. Donec semper ante massa, et mollis est sollicitudin quis. Pellentesque faucibus lacus vitae tellus porta facilisis. Vestibulum porttitor accumsan eros vitae eleifend. Sed commodo efficitur risus at volutpat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur.</p>
-                <button class="close-bio">CLOSE BIO</button>
-            </div>
-        </div>
-        <div class="bio bronson">
-            <div class="bio-image"></div>
-            <div class="bio-info">
-                <h2 class="bio-name">Action Bronson</h2>
-                <p class="bio-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacus velit, venenatis sed orci a, sollicitudin sagittis orci. Curabitur a nisi at velit consequat tempor vel in leo. Aliquam erat volutpat. Donec semper ante massa, et mollis est sollicitudin quis. Pellentesque faucibus lacus vitae tellus porta facilisis. Vestibulum porttitor accumsan eros vitae eleifend. Sed commodo efficitur risus at volutpat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur.</p>
-                <button class="close-bio">CLOSE BIO</button>
-            </div>
-        </div>
-        <div class="bio neistat">
-            <div class="bio-image"></div>
-            <div class="bio-info">
-                <h2 class="bio-name">Casey Neistat</h2>
-                <p class="bio-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacus velit, venenatis sed orci a, sollicitudin sagittis orci. Curabitur a nisi at velit consequat tempor vel in leo. Aliquam erat volutpat. Donec semper ante massa, et mollis est sollicitudin quis. Pellentesque faucibus lacus vitae tellus porta facilisis. Vestibulum porttitor accumsan eros vitae eleifend. Sed commodo efficitur risus at volutpat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur.</p>
-                <button class="close-bio">CLOSE BIO</button>
-            </div>
-        </div>
+        <?php foreach($person as $per) { echo
+            '<div class="bio ' . $per['person_class'] . '">
+                <div class="bio-image"></div>
+                <div class="bio-info">
+                    <h2 class="bio-name">' . $per['person_name'] . '</h2>
+                    <p class="bio-description">' . $per['person_info'] . '</p>
+                    <button class="close-bio">CLOSE BIO</button>
+                </div>
+            </div>';}
+        ?>
     </div>
 </section>
 
@@ -56,50 +55,29 @@
                 </div>
 
                 <div id="owl-people" class="owl-carousel owl-theme">
-                    <div class="item person">
-                        <div class="person-image bourdain"></div>
-                        <div class="person-info">
-                            <div class="person-name">Anthony Bourdain</div>
-                            <button id="open-bourdain" class="view-bio">VIEW BIO</button>
-                        </div>
-                    </div>
-                    <div class="item person">
-                        <div class="person-image huang"></div>
-                        <div class="person-info">
-                            <div class="person-name">Eddie Huang</div>
-                            <button id="open-huang" class="view-bio">VIEW BIO</button>
-                        </div>
-                    </div>
-                    <div class="item person">
-                        <div class="person-image bronson"></div>
-                        <div class="person-info">
-                            <div class="person-name">Action Bronson</div>
-                            <button id="open-bronson" class="view-bio">VIEW BIO</button>
-                        </div>
-                    </div>
-                    <div class="item person">
-                        <div class="person-image neistat"></div>
-                        <div class="person-info">
-                            <div class="person-name">Casey Neistat</div>
-                            <button id="open-neistat" class="view-bio">VIEW BIO</button>
-                        </div>
-                    </div>
+                    <?php foreach($person as $person) { echo
+                    
+                        '<div class="item person">
+                            <div class="person-image ' . $person['person_class'] . '"></div>
+                            <div class="person-info">
+                                <div class="person-name">' . $person['person_name'] . '</div>
+                                <button id="open-' . $person['person_class'] . '" class="view-bio">VIEW BIO</button>
+                            </div>
+                        </div>';}
+                    ?>
                 </div>
             </div>
         </section>
 
         <section id="places" class="places">
             <h2 class="section-title">Places</h2>
-            <div class="location">
-                <img class="location-picture antelope slide-up" src="<?php echo get_template_directory_uri(); ?>/assets/images/home/canyon.jpg" alt="Antelope Canyon"/>
-                <h2 class="location-name antelope slide-up">Antelope Canyon</h2>
-                <p class="location-description antelope slide-up">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacus velit, venenatis sed orci a, sollicitudin sagittis orci. Curabitur a nisi at velit consequat tempor vel in leo. Aliquam erat volutpat. Donec semper ante massa, et mollis est sollicitudin quis. Pellentesque faucibus lacus vitae tellus porta facilisis. Vestibulum porttitor accumsan eros vitae eleifend.</p>
-            </div>
-            <div class="location">
-                <img class="location-picture torres slide-up" src="<?php echo get_template_directory_uri(); ?>/assets/images/home/lake.jpg" alt="Torres Del Paine lake and mountains"/>
-                <h2 class="location-name torres slide-up">Torres Del Paine</h2>
-                <p class="location-description torres slide-up">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacus velit, venenatis sed orci a, sollicitudin sagittis orci. Curabitur a nisi at velit consequat tempor vel in leo. Aliquam erat volutpat. Donec semper ante massa, et mollis est sollicitudin quis. Pellentesque faucibus lacus vitae tellus porta facilisis. Vestibulum porttitor accumsan eros vitae eleifend.</p>
-            </div>
+            <?php foreach($place as $place) { echo 
+                '<div class="location">
+                    <img class="location-picture ' . $place['place_class'] . ' slide-up" src="' . $place['place_image'] . '" alt="Antelope Canyon"/>
+                    <h2 class="location-name ' . $place['place_class'] . ' slide-up">' . $place['place_name'] . '</h2>
+                    <p class="location-description ' . $place['place_class'] . ' slide-up">' . $place['place_description'] .  '</p>
+                </div>';}
+            ?>
         </section>
 
         <section id="gallery" class="gallery">
@@ -109,15 +87,16 @@
                 <button type="button" role="presentation" class="gallery-next"> <span class="btn next" aria-label="Next">›</span></button>
             </div>
             <div id="owl-gallery" class="owl-carousel owl-theme">
-                <div class="item gallery">
-                    <img class="owl-lazy" data-src="<?php echo get_template_directory_uri(); ?>/assets/images/home/santorini.jpg" alt="santorini buildings" />
-                </div>
-                <div class="item gallery">
-                    <img class="owl-lazy" data-src="<?php echo get_template_directory_uri(); ?>/assets/images/home/fuji.jpg" alt="mount fuji" />
-                </div>
-                <div class="item gallery">
-                    <img class="owl-lazy" data-src="<?php echo get_template_directory_uri(); ?>/assets/images/home/moscow.jpg" alt="moscow building" />
-                </div>
+                <?php foreach($gallery_videos as $videos) { echo 
+                    '<div class="item-video gallery">
+                        <iframe class="video-iframe" width="100%" height="auto" src="' . $videos['video_link'] . '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>';}
+                ?>
+                <?php foreach($gallery_images as $images) { echo 
+                    '<div class="item gallery">
+                        <img class="" src="' . $images['gallery_image'] . '" alt="' . $images['image_alt'] . '" />
+                    </div>';}
+                ?>
             </div>
         </section>
     </div>

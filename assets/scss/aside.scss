@@ -7,7 +7,7 @@ div.social-container {
     align-items: center;
     color: $white;
     left: 50%;
-
+    z-index: 1;
     -webkit-transform: translate3d(-50%, 0, 0);
     -ms-transform: translate3d(-50%, 0, 0);
     transform: translate3d(-50%, 0, 0);

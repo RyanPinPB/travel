@@ -22,13 +22,17 @@ main {
 .wrap {
     position: relative;
     background: $black;
-    padding-top: 40px;
+    padding: 40px 0px;
 }
 
 .clearfix::after {
     content: "";
     clear: both;
     display: table;
+}
+
+::selection {
+    background: rgba(0,0,0,0);
 }
 
 a {
@@ -59,7 +63,6 @@ h1 {
 h2 {
     font-size: 2.4rem;
     color: $white;
-    // margin:40px 10px 30px 10px;
     line-height: 1.2em;
     font-family: $headerFont;
 	opacity: .08;
@@ -218,7 +221,7 @@ button {
     }
 
     .wrap {
-        padding-top: 200px;
+        padding: 200px 0px;
     }
 
 

@@ -224,6 +224,7 @@ button:-moz-focusring,
 
 fieldset {
 	padding: 0.35em 0.75em 0.625em;
+	border: none;
 }
 
 /**
@@ -898,9 +899,9 @@ object {
 /*--------------------------------------------------------------
 ## Galleries
 --------------------------------------------------------------*/
-.gallery {
-	margin-bottom: 1.5em;
-}
+// .gallery {
+// 	margin-bottom: 1.5em;
+// }
 
 .gallery-item {
 	display: inline-block;

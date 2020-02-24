@@ -48,33 +48,24 @@ $(document).ready(function() {
         autoplayHoverPause: false,
         dots: false,
         nav: false,
-        lazyLoad: true,
+        video: true,
         margin:10,
         responsive: {
             0: {
                 items : 1,
             },
-            769: {
-                items : 1,
-                lazyLoadEager: 1,
-                stagePadding: 150,
-                center: true
-            },
             1025: {
                 items : 1,
-                lazyLoadEager: 1,
                 stagePadding: 250,
                 center: true
             },
             1350: {
                 items : 1,
-                lazyLoadEager: 1,
                 stagePadding: 350,
                 center: true
             },
             1600: {
                 items : 1,
-                lazyLoadEager: 1,
                 stagePadding: 450,
                 center: true
             }
@@ -187,7 +178,6 @@ function bioButtonClick() {
 
 for (let i = 0; i < openBioButtons.length; i++) {
     openBioButtons[i].addEventListener("click", (e) => {
-        console.log(i);
         bioButtonClick();
         bios[i].classList.add('active');
         nav.classList.remove(visible);
@@ -280,7 +270,6 @@ document.addEventListener('scroll', function() {
     }
 );
 
-// parallax scroll speed on hero - using background attachment = fixed for now
 function background_image_parallax($object, multiplier){
     multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.15;
     multiplier = 1 - multiplier;
@@ -290,7 +279,6 @@ function background_image_parallax($object, multiplier){
         let from_top = $(document).scrollTop(),
         translateY = '0' +(multiplier * from_top).toFixed(2);
         translateX = 0;
-        //$object.css({"background-position" : bg_css }); old background pos is heavy for browser to render
         $object.css({'transform': 'translate3d(' + translateX +'px, ' +   translateY + 'px, 0)' }); 
     });
 };

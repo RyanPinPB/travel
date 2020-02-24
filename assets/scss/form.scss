@@ -1,0 +1,279 @@
+legend {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    padding: 0;
+    margin: 0;
+    display:unset;
+}
+
+label {
+    font-size: .7rem;
+    padding-bottom:5px;
+}
+
+select,
+input {
+    font-size:1rem;
+}
+
+select {
+    width:100%;
+    background:rgba(0,0,0,0);
+    border:none;
+    border-bottom: 2px solid $grey;
+    cursor:pointer;
+
+    &:hover {
+        border-bottom: 2px solid fade-out($color: $white, $amount: .4);
+    }
+
+    &:hover,
+    &:hover + label {
+        color: fade-out($color: $white, $amount: .4);
+    }
+
+    &:focus,
+    &:active {
+        color: $white;
+        border-bottom: 2px solid $white;
+    }
+    
+    &:focus + label,
+    &:active + label {
+        color: $white;
+    }
+}
+
+input[type=text],
+input[type=email] {
+    background:rgba(0,0,0,0);
+    border:none;
+    border-bottom: 2px solid $grey;
+    width:100%;
+    color: $grey;
+    &:focus,
+    &:active {
+        color: $white;
+        border-bottom: 2px solid $white;
+    }
+}
+
+input {
+    &:hover {
+        border-bottom: 2px solid fade-out($color: $white, $amount: .4);
+    }
+
+    &:hover,
+    &:hover + label {
+        color: fade-out($color: $white, $amount: .4);
+    }
+
+    &:focus,
+    &:active {
+        color: $white;
+        border-bottom: 2px solid $white;
+    }
+    &:focus + label,
+    &:active + label {
+        color: $white;
+    }
+}
+
+input[type=checkbox] {
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+    background: $black2;
+    border: 1px solid $grey;
+    line-height: 1;
+    cursor: pointer;
+}
+
+
+
+//custom checkbox
+
+.styled-checkbox {
+    position: absolute;
+    opacity: 0;
+  
+    & + label {
+        position: relative;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    // creating new box
+    & + label:before {
+    content: '';
+        margin-right: 10px;
+        display: inline-block;
+        vertical-align: text-top;
+        width: 50px;
+        height: 50px;
+        background: $black2;
+        border: 2px solid $grey;
+    }
+
+    // Box hover
+    &:hover + label:before {
+        background: fade-out($color: $white, $amount: .99);
+    }
+    
+    // Box focus
+    &:focus + label:before {
+        box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.4);
+    }
+
+    // Box checked
+    &:checked + label:before {
+        background: $black2;
+    }
+  
+    // Disabled state label.
+    &:disabled + label {
+        color: #b8b8b8;
+        cursor: auto;
+    }
+
+    // Disabled box.
+    &:disabled + label:before {
+        box-shadow: none;
+        background: #ddd;
+    }
+
+    // Checkmark. Could be replaced with an image
+    &:checked + label:after {
+        content: '✓';
+        font-size:80px;
+        position: absolute;
+        left: 2px;
+        bottom: -20px;
+    }
+}
+
+
+
+
+
+.checkbox-submit.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button[type=submit] {
+    color: $white;
+    font-weight: 600;
+    border-radius: 40px;
+    padding: 20px 40px;
+    background: $black3;
+    border: none;
+    box-shadow: 4px 4px 8px fade-out($color: $black, $amount: .5);
+    &:hover {
+        animation: pulse 1.5s infinite;
+    }
+}
+
+.frm_fields_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    div {
+        padding:0px 0px;
+    }
+}
+
+.frm_hidden {
+    visibility: hidden;
+}
+
+.frm_full {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.frm_half {
+    width: 50%;
+}
+
+#frm_field_8_container {
+    padding-bottom: 40px;
+}
+
+.frm_checkbox label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.frm_html_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    label {
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+    }
+}
+
+// This is a form checkbox that will have functionality (can be required) - change display to flex and turn off the styled-checkbox above
+.vertical_radio {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.vertical_radio .frm_primary_label {
+    display:none;
+}
+
+.frm_submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.frm_error,
+.frm_error_style {
+    color: $white;
+}
+
+
+@media (min-width: 450px) {
+    // input[type=checkbox] {
+    //     margin-right: 20px;
+    // }
+    
+    .styled-checkbox {
+        & + label:before {
+            content: '';
+            margin-right: 20px;
+        }
+    }
+}
+
+@media (min-width: 769px) {
+    button[type=submit] {
+        padding: 30px 60px;
+    }
+}
+
+@media (min-width: 1025px) {
+    button[type=submit] {
+        padding: 30px 80px;
+    }
+}
+
+@media (min-width: 1350px) {
+    button[type=submit] {
+        padding: 30px 60px;
+    }
+}
