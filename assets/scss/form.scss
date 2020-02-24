@@ -168,7 +168,7 @@ button[type=submit] {
     color: $white;
     font-weight: 600;
     border-radius: 40px;
-    padding: 20px 40px;
+    padding: 20px;
     background: $black3;
     border: none;
     box-shadow: 4px 4px 8px fade-out($color: $black, $amount: .5);
@@ -248,10 +248,10 @@ button[type=submit] {
 
 
 @media (min-width: 450px) {
-    // input[type=checkbox] {
-    //     margin-right: 20px;
-    // }
-    
+    button[type=submit] {
+        padding: 30px 40px;
+    }
+
     .styled-checkbox {
         & + label:before {
             content: '';
