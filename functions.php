@@ -122,7 +122,7 @@ add_action( 'widgets_init', 'travel_widgets_init' );
 function travel_scripts() {
 	wp_enqueue_style( 'travel-style', get_template_directory_uri() . '/assets/css/style.min.css' );
 
-	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800|Roboto:400,500,700,900&display=swap' ); 
+	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Poppins:400,600,700,800|Roboto:400,500,700,900&display=swap' ); 
 
 	wp_enqueue_style( 'owl-style', get_template_directory_uri() . '/assets/vendors/carousel/dist/assets/owl.carousel.min.css' );
 
