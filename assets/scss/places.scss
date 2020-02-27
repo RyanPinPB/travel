@@ -1,37 +1,19 @@
-div.places {
+.places {
     position: relative;
 }
 
-div.location {
+.location {
     margin: 40px 0px;
-    img.location-picture {
-        min-height: 400px;
-        object-fit:cover;
-    }
 }
 
-// if you want text to sit on background image before 1025px - adjust linear gradient and text shadow and positioning layout
-
-/* img.antelope {
-    background: linear-gradient(fade-out($color: $grey, $amount: .95), fade-out($color: $grey, $amount: .95) ), url(../images/home/canyon.png);
-    background-size: cover;
-    background-position: center;
-}
-
-img.torres {
-    background: linear-gradient(fade-out($color: $grey, $amount: .95), fade-out($color: $grey, $amount: .95) ), url(../images/home/lake.png);
-    background-size: cover;
-    background-position: center;
-} */
-
-h2.location-name {
+.location-name {
     opacity:1;
     padding:20px;
     margin:0;
     line-height: 1;
 }
 
-p.location-description {
+.location-description {
     font-size:20px;
     padding:10px 10px 20px 10px;
     margin:0;
@@ -52,9 +34,9 @@ p.location-description {
 }
 
 @media (min-width:769px) {
-    div.location {
+    .location {
         margin:40px 60px;
-        h2 {
+        .location-name {
             text-align:left;
         }
     }
@@ -63,58 +45,63 @@ p.location-description {
 @media (min-width:1025px) {
     section.places {
         position:relative;
-        margin:200px 0px;
+        margin:300px 0px 240px 0px;
         .section-title {
             position: absolute;
             left:0;
             top:-150px;
             margin:0;
         }
-        div.location{
+        .location{
             display:grid;
             grid-template-columns: repeat(12, 1fr);
             grid-column-gap: 16px;
             margin-bottom: 140px;
-            min-height: 800px;
-            text-shadow: 2px 2px fade-out($color: $black, $amount: .7);
+            // text-shadow: 2px 2px fade-out($color: $black, $amount: .7); helps see text over image
             .location-picture {
-                min-height:800px;
+                min-height:450px;
+                object-fit: cover;
+                object-position: center;
             }
             .text-align {
                 text-align: start;
             }
-            h2 {
-                font-size: 5rem;
+            .location-name {
+                font-size: 4rem;
                 padding-left:0;
             }
-            p {
+            .location-description {
                 padding-left: 0;
-                font-size: 20px;
+                font-size: 16px;
+                line-height: 1.4;
             }
-            img.antelope {
+
+            .location-picture.text-left {
                 grid-column: 5 / 13;
                 grid-row: 1 / 11;
 
             }
-            h2.antelope {
+            .location-name.text-left {
                 grid-column: 1 / 10;
-                grid-row: 8 / 9;
+                grid-row: 6 / 7;
+                white-space: nowrap;
             }
-            p.antelope {
+            .location-description.text-left {
                 grid-column: 1 / 6;
-                grid-row: 9 / 10;
+                grid-row: 7 / 9;
             }
-            img.torres {
+
+            .location-picture.text-right {
                 grid-column: 1 / 9;
                 grid-row: 1 / 11;
             }
-            h2.torres {
-                grid-column: 7 / 12;
-                grid-row: 8 / 9;
-            }
-            p.torres {
+            .location-name.text-right {
                 grid-column: 7 / 13;
-                grid-row: 9 / 10;
+                grid-row: 5 / 6;
+            }
+            .location-description.text-right {
+                grid-column: 7 / 13;
+                grid-row: 6 / 7;
             }
         }
     }
@@ -122,22 +109,51 @@ p.location-description {
 
 @media (min-width:1350px) {
     section.places {
-        margin:400px 0px;
+        margin:400px 0px 310px 0px;
         .section-title {
             top:-190px;
         }
+        .location {
+            margin:140px 140px;
+            .location-picture {
+                min-height:550px;
+            }
+            .location-name {
+                font-size: 5rem;
+            }
+            .location-description {
+                font-size: 18px;
+            }
+        }
     }
 
-    div.location {
-        margin:40px 140px;
-    }
 }
 
 @media (min-width:1600px) {
     section.places {
-        margin:400px 0px;
         .section-title {
             top:-220px;
+        }
+        .location {
+            .location-picture {
+                min-height:650px;
+            }
+            .location-name {
+                font-size: 6rem;
+            }
+            .location-description {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+@media (min-width:1900px) {
+    section.places {
+        .location {
+            .location-picture {
+                min-height:750px;
+            }
         }
     }
 }

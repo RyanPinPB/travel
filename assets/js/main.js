@@ -73,10 +73,10 @@ $(document).ready(function() {
     });
 
     $('.gallery-next').click(function() {
-        $('#owl-gallery').trigger('next.owl.carousel', [500]);
+        $('#owl-gallery').trigger('next.owl.carousel', [1000]);
     })
     $('.gallery-prev').click(function() {
-        $('#owl-gallery').trigger('prev.owl.carousel', [500]);
+        $('#owl-gallery').trigger('prev.owl.carousel', [1000]);
     })
    
 });

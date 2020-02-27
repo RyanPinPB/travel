@@ -17,10 +17,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: fade-out($color: $black, $amount: .45);
     .bio-container {
         width: 95%;
         height:95%;
-        padding:10px;
         margin:auto;
         display: flex;
         flex-direction: column;
@@ -34,40 +34,38 @@
             justify-content: center;
             align-items: center;
             .bio-image {
-                min-height:400px;
+                padding-bottom:95%;
                 width:100%;
                 background-size:cover;
                 background-position: center;
             }
-
             .bio-info {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 background-color: $black2;
+                padding:10px;
                 &:hover button.close-bio {
                     transform: scale(1.05);
                 }
                 .bio-name {
                     font-family: $headerFont;
                     font-size: 1.5rem;
-                    line-height: 1.4rem;
+                    line-height: 1;
                     font-weight:600;
                     opacity: 1;
-                    padding: 0;
-                    padding-top:20px;
-                    margin: 20px;
-                    text-align: center;
+                    padding: 0px;
+                    margin: 20px 0px;
                 }
                 .bio-description {
                     font-size: 16px;
                     line-height: 1.2;
-                    margin: 0px 20px;
                     padding: 0px;
+                    margin: 0px;
                 }
                 button.close-bio {
                     padding:20px 60px;
-                    border-radius: 20px;
+                    border-radius: 35px;
                     background-color: $black3;
                     color: $white;
                     font-size: .6rem;
@@ -77,7 +75,7 @@
                     margin: 20px auto;
                     border:none;
                     outline:none;
-                    box-shadow: 4px 4px 8px fade-out($color: $black, $amount: .4);
+                    box-shadow: 2px 2px 4px fade-out($color: $black, $amount: .8);
                     transition: transform .3s ease-in-out;
                     &:hover {
                         animation: pulse 1.5s infinite;
@@ -85,26 +83,11 @@
                 }
             }
         }
-        .bourdain .bio-image {
-            background-image: url(../images/home/bourdain.jpg);
-        }
-        
-        .huang .bio-image {
-            background-image: url(../images/home/huang.jpg);
-        }
-        
-        .bronson .bio-image {
-            background-image: url(../images/home/bronson.png);
-        }
-        
-        .neistat .bio-image {
-            background-image: url(../images/home/neistat.jpg);
-        }
     }
 }
 
 .no-scroll {
-    overflow: hidden;
+    overflow-y: hidden;
 }
 
 .blur-filter {
@@ -116,19 +99,13 @@
 }
 
 @media (max-height: 800px) {
-
     .bio-overlay.active { 
         .bio-container {
             .bio.active {
                 .bio-image {
                     display: none;
                 }
-    
                 .bio-info {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    background-color: $black2;
                     border-radius: 10px 10px 10px 10px;
                 }
             }
@@ -146,10 +123,6 @@
                 }
     
                 .bio-info {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    background-color: $black2;
                     border-radius: 0px 0px 10px 10px;
                 }
             }
@@ -157,126 +130,14 @@
     } 
 }
 
-@media (min-height: 801px) and (min-width: 550px) {
-
-    .bio-overlay.active { 
-        .bio-container {
-            .bio.active {
-                .bio-image {
-                    min-height:60%
-                }
-                .bio-info {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    background-color: $black2;
-                    border-radius: 0px 0px 10px 10px;
-                }
-            }
-        }
-    } 
-}
-
-@media (min-width: 375px) {
-    .bio-overlay.active { 
-        .bio-container {
-            width: 95%;
-            height:95%;
-            padding:10px;
-            .bio.active {
-                width: 100%;
-                height: 100%;
-                display:flex;
-                flex-direction: column;
-                .bio-info {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    padding:20px;
-                    .bio-name {
-                        font-size: 1.3rem;
-                        line-height: 1.4rem;
-                        padding: 0;
-                        margin: 20px;
-                    }
-                    .bio-description {
-                        font-size: 15px;
-                        line-height: 1.2;
-                        margin: 0px 15px;
-                        padding: 0px;
-                    }
-                    button.close-bio {
-                        padding:20px 60px;
-                        font-size: .6rem;
-                        margin: 20px auto;
-                    }
-                }
-            }
-        }
-    }
-
-}
 
 @media (min-width: 400px) {
-
 }
 
 @media (min-width: 500px) {
     .bio-overlay.active { 
         .bio-container {
-            .bio.active {
-                .bio-info { 
-                    .bio-name {
-                        font-size: 1.75rem;
-                        line-height: 1.6rem;
-                        font-weight:600;
-                        padding: 0;
-                        margin: 20px;
-                    }
-                    .bio-description {
-                        font-size: 16px;
-                        line-height: 1.2;
-                        margin: 0px 20px;
-                        padding: 0px;
-                    }
-                    button.close-bio {
-                        padding:20px 60px;
-                        font-size: .6rem;
-                        font-weight: 600;
-                        margin: 20px auto;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media (min-width: 675px) {
-    .bio-overlay.active { 
-        .bio-container {
-            .bio.active {
-                .bio-info { 
-                    .bio-name {
-                        font-size: 1.75rem;
-                        line-height: 1.6rem;
-                        font-weight:600;
-                        padding: 0;
-                        margin: 20px;
-                    }
-                    .bio-description {
-                        font-size: 16px;
-                        line-height: 1.2;
-                        margin: 0px 20px;
-                        padding: 0px;
-                    }
-                    button.close-bio {
-                        padding:20px 60px;
-                        font-size: .75rem;
-                        font-weight: 600;
-                        margin: 20px auto;
-                    }
-                }
-            }
+            max-width:475px;
         }
     }
 }
@@ -284,36 +145,12 @@
 @media (min-width: 769px) {
     .bio-overlay.active { 
         .bio-container {
-            width: 80%;
+            width: 90%;
             height:90%;
-            padding:0px;
             .bio.active {
                 flex-direction: row;
-                .bio-image {
-                    min-width:45%;
-                    height:100%;
-                }
                 .bio-info { 
-                    height:100%;
-                    .bio-name {
-                        font-size: 1.75rem;
-                        line-height: 1.6rem;
-                        font-weight:600;
-                        padding: 0;
-                        margin: 20px;
-                    }
-                    .bio-description {
-                        font-size: 18px;
-                        line-height: 1.2;
-                        margin: 0px 20px;
-                        padding: 0px;
-                    }
-                    button.close-bio {
-                        padding:20px 60px;
-                        font-size: .75rem;
-                        font-weight: 600;
-                        margin: 20px auto;
-                    }
+                    padding:20px 40px;
                 }
             }
         }
@@ -323,78 +160,36 @@
 @media (min-width: 769px) and (min-height:801px) {
     .bio-overlay.active { 
         .bio-container {
-            width: 80%;
-            height:80%;
-            padding:0px;
+            max-width:unset;
             .bio.active {
                 flex-direction: row;
                 .bio-image {
-                    min-width:55%;
+                    padding-bottom: 0;
+                    padding-right: 50%;
                     height:100%;
+                    width:0;
                     border-radius: 10px 0px 0px 10px;
                 }
                 .bio-info { 
                     height:100%;
                     border-radius: 0px 10px 10px 0px;
-                    .bio-name {
-                        font-size: 1.75rem;
-                        line-height: 1.6rem;
-                        font-weight:600;
-                        padding: 0;
-                        margin: 20px;
-                    }
-                    .bio-description {
-                        font-size: 18px;
-                        line-height: 1.2;
-                        margin: 0px 20px;
-                        padding: 0px;
-                    }
-                    button.close-bio {
-                        padding:20px 60px;
-                        font-size: .75rem;
-                        font-weight: 600;
-                        margin: 20px auto;
-                    }
                 }
             }
         }
     }
 }
 
-@media (min-width: 1000px) and (min-height:1000px) {
+@media (min-width: 769px) and (min-height:1000px) {
     .bio-overlay.active { 
         .bio-container {
-            width: 80%;
-            height:80%;
-            padding:0px;
+            max-height:800px;
             .bio.active {
-                flex-direction: row;
-                .bio-image {
-                    min-width:55%;
-                    height:100%;
-                    border-radius: 10px 0px 0px 10px;
-                }
                 .bio-info { 
-                    height:100%;
-                    border-radius: 0px 10px 10px 0px;
                     .bio-name {
                         font-size: 1.75rem;
-                        line-height: 1.6rem;
-                        font-weight:600;
-                        padding: 0;
-                        margin: 20px;
                     }
                     .bio-description {
                         font-size: 20px;
-                        line-height: 1.3;
-                        margin: 20px;
-                        padding: 0px;
-                    }
-                    button.close-bio {
-                        padding:20px 60px;
-                        font-size: .75rem;
-                        font-weight: 600;
-                        margin: 20px auto;
                     }
                 }
             }
@@ -406,75 +201,18 @@
 
     .bio-overlay.active { 
         .bio-container {
-            width: 90%;
-            height:90%;
-            padding:0px;
             .bio.active {
-                .bio-image {
-                    width:55%;
-                    height:100%;
-                }
                 .bio-info { 
-                    width:45%;
-                    height:100%;
                     .bio-name {
                         font-size: 1.75rem;
-                        line-height: 1.6rem;
-                        font-weight:600;
-                        padding: 0;
-                        margin: 40px 20px;
-                    }
-                    .bio-description {
-                        font-size: 18px;
-                        line-height: 1.2;
-                        margin: 0px 20px;
-                        padding: 0px;
-                    }
-                    button.close-bio {
-                        padding:20px 60px;
-                        font-size: .75rem;
-                        font-weight: 600;
                         margin: 40px auto;
                     }
-                }
-            }
-        }
-    }
-
-}
-
-@media (min-width: 1025px) and (min-height:1000px) {
-
-    .bio-overlay.active { 
-        .bio-container {
-            width: 90%;
-            height:90%;
-            padding:0px;
-            .bio.active {
-                .bio-image {
-                    width:55%;
-                    height:100%;
-                }
-                .bio-info { 
-                    width:45%;
-                    height:100%;
-                    .bio-name {
-                        font-size: 1.75rem;
-                        line-height: 1.6rem;
-                        font-weight:600;
-                        padding: 0;
-                        margin: 40px 20px;
-                    }
                     .bio-description {
-                        font-size: 22px;
-                        line-height: 1.2;
-                        margin: 20px;
-                        padding: 0px;
+                        font-size: 20px;
+                        line-height: 1.4;
                     }
                     button.close-bio {
-                        padding:20px 60px;
                         font-size: .75rem;
-                        font-weight: 600;
                         margin: 40px auto;
                     }
                 }
@@ -489,33 +227,6 @@
         .bio-container {
             width: 75%;
             height:75%;
-            .bio.active {
-                .bio-image {
-                    width:50%;
-                }
-                .bio-info { 
-                    width:50%;
-                    .bio-name {
-                        font-size: 1.75rem;
-                        line-height: 1.6rem;
-                        font-weight:600;
-                        padding: 0;
-                        margin: 40px 20px;
-                    }
-                    .bio-description {
-                        font-size: 20px;
-                        line-height: 1.2;
-                        margin: 0px 40px;
-                        padding: 0px;
-                    }
-                    button.close-bio {
-                        padding:20px 60px;
-                        font-size: 1rem;
-                        font-weight: 600;
-                        margin: 40px auto;
-                    }
-                }
-            }
         }
     }
 }
@@ -525,33 +236,6 @@
         .bio-container {
             width: 65%;
             height:65%;
-            .bio.active {
-                .bio-image {
-                    width:50%;
-                }
-                .bio-info { 
-                    width:50%;
-                    .bio-name {
-                        font-size: 1.75rem;
-                        line-height: 1.6rem;
-                        font-weight:600;
-                        padding: 0;
-                        margin: 40px 20px;
-                    }
-                    .bio-description {
-                        font-size: 22px;
-                        line-height: 1.2;
-                        margin: 0px 40px;
-                        padding: 0px;
-                    }
-                    button.close-bio {
-                        padding:20px 60px;
-                        font-size: 1rem;
-                        font-weight: 600;
-                        margin: 40px auto;
-                    }
-                }
-            }
         }
     }
 }

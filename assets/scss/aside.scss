@@ -1,19 +1,17 @@
 div.social-container {
     position: absolute;
-    top: 0;
+    top: 10px;
     display:flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    color: $white;
     left: 50%;
     z-index: 1;
     -webkit-transform: translate3d(-50%, 0, 0);
     -ms-transform: translate3d(-50%, 0, 0);
     transform: translate3d(-50%, 0, 0);
-    font-size:16px;
     span {
-        margin:7.5px;
+        display: none;
     }
     a {
         display:flex;
@@ -26,36 +24,13 @@ div.social-container {
             animation: pulse 1.5s infinite;
         }
         svg {
-            padding:6px;
-            width:25px;
-            height:25px;
+            padding:10px;
+            width:40px;
+            height:40px;
             fill: $white;
         }
     }
-
-/*     .facebook {
-        background: url(../icons/icon-facebook.svg) no-repeat center;
-        border: 2px $white;
-        border-radius: 50%;
-    }
-    .twitter {
-        background: url(../icons/icon-twitter.svg) no-repeat center;
-        border: 2px $white;
-        border-radius: 50%;
-    }
-    .pinterest {
-        background: url(../icons/icon-pinterest.svg) no-repeat center;
-        border: 2px $white;
-        border-radius: 50%;
-    } */
 }
-
-/* .social-icon {
-    width:25px;
-    height:25px;
-    background-size: cover;
-    background-position: center;
-} */
 
 @media (min-width:400px) {
 }
@@ -72,7 +47,8 @@ div.social-container {
 @media (min-width:769px) {
     div.social-container {
         position: fixed;
-        top: 25px;
+        width:60px;
+        top: 35px;
         flex-direction: column;
         left: 0;
         -webkit-transform: translate3d(0, 0, 0);
@@ -81,13 +57,26 @@ div.social-container {
         font-size:.7rem;
 
         span {
+            display:flex;
             -webkit-transform: matrix(0, 1, -1, 0, 0, 0);
             -ms-transform: matrix(0, 1, -1, 0, 0, 0);
             transform: matrix(0, 1, -1, 0, 0, 0);
             margin:7.5px;
+            color: $white;
+            font-size:16px;
+            font-weight:900;
+            letter-spacing: 1.5px;
         }
         a.facebook {
             margin-top:20px;
+        }
+
+        a {
+            svg {
+                padding:7.5px;
+                width:30px;
+                height:30px;
+            }
         }
     }
 }
@@ -97,12 +86,22 @@ div.social-container {
 
 @media (min-width:1350px) {
     div.social-container {
+        width: 140px;
         top: 50px;
-        left: 25px;
         -webkit-transform: translate3d(0, 0, 0);
         -ms-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
         font-size:.7rem;
+        span {
+            margin:12.5px;
+        }
+        a {
+            svg {
+                padding:10px;
+                width:40px;
+                height:40px;
+            }
+        }
     }
 }
 

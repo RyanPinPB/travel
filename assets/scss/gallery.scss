@@ -2,16 +2,32 @@
     position: relative;
     .customNavigation {
         justify-content: center;
+        z-index:2;
     }
 
-    img {
-        object-fit: cover;
+    .gallery-image {
+        padding-bottom: 56.25%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
-    img,
+    .gallery-image,
     .owl-item .video-iframe {
         width: 100%;
-        height: 250px;
+    }
+
+    .item-video {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     }
 
 }
@@ -26,27 +42,12 @@
 }
 
 @media (min-width:500px) {
-    #gallery {
-        img,
-        .owl-item .video-iframe {
-            width: 100%;
-            height: 350px;
-        }
-    }
-
 }
 
 @media (min-width:675px) {
 }
 
 @media (min-width:769px) {
-    #gallery {
-        img,
-        .owl-item .video-iframe {
-            width: 100%;
-            height: 450px;
-        }
-    }
 }
 
 @media (min-width:1025px) {
@@ -54,6 +55,7 @@
         margin: 200px 0px 0px 0px;
         .customNavigation {
             position: relative;
+            margin-bottom: -20px
         }
     }
 
@@ -61,7 +63,7 @@
         position: absolute;
         left:0;
         right:0;
-        top:-130px;
+        top:-140px;
     }
 
 
@@ -73,19 +75,18 @@
 
         .owl-item {
             transition: 1s transform ease-in-out;
+            .item,
+            .item-video {
+                transition: 1s transform ease-in-out;
+            }
         }
 
-        .owl-item img,
-        .owl-item .video-iframe  {
-            height:500px;
-        }
         .owl-item.center {
             position: relative;
             z-index: 1;
             transform: translate3d(0, -40px, 0);
-            .item img,
-            .item-video .video-iframe {
-                transition: 1s transform ease-in-out;
+            .item,
+            .item-video {
                 -webkit-transform: scale(1.2, 1.2);
                 -ms-transform: scale(1.2, 1.2);
                 transform: scale(1.2, 1.2);
@@ -96,13 +97,13 @@
 
 @media (min-width:1350px) {
     .gallery .section-title {
-        top:-140px;
+        top:-150px;
     }
 
     #gallery {
         .owl-item.center {
-            .item img,
-            .owl-item .video-iframe {
+            .item,
+            .item-video {
                 -webkit-transform: scale(1.1, 1.1);
                 -ms-transform: scale(1.1, 1.1);
                 transform: scale(1.1, 1.1);
@@ -113,14 +114,13 @@
 
 @media (min-width:1600px) {
     .gallery .section-title {
-        top:-175px;
+        top:-170px;
     }
 
     #gallery {
         .owl-item.center {
-            .item img,
-            .owl-item .video-iframe {
-                height:550px;
+            .item,
+            .item-video {
                 -webkit-transform: scale(1.05, 1.05);
                 -ms-transform: scale(1.05, 1.05);
                 transform: scale(1.05, 1.05);

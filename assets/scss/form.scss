@@ -15,6 +15,9 @@ label {
 select,
 input {
     font-size:1rem;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
 }
 
 select {
@@ -22,10 +25,14 @@ select {
     background:rgba(0,0,0,0);
     border:none;
     border-bottom: 2px solid $grey;
+    background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='24' height='24' viewBox='0 0 24 24'><path fill='rgba(102, 102, 102, 1)' d='M7.406 7.828l4.594 4.594 4.594-4.594 1.406 1.406-6 6-6-6z'></path></svg>");
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
     cursor:pointer;
 
     &:hover {
         border-bottom: 2px solid fade-out($color: $white, $amount: .4);
+        background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='24' height='24' viewBox='0 0 24 24'><path fill='rgba(255,255,255,.6)' d='M7.406 7.828l4.594 4.594 4.594-4.594 1.406 1.406-6 6-6-6z'></path></svg>");
     }
 
     &:hover,
@@ -37,6 +44,7 @@ select {
     &:active {
         color: $white;
         border-bottom: 2px solid $white;
+        background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='24' height='24' viewBox='0 0 24 24'><path fill='rgba(255,255,255,1)' d='M7.406 7.828l4.594 4.594 4.594-4.594 1.406 1.406-6 6-6-6z'></path></svg>");
     }
     
     &:focus + label,
@@ -50,6 +58,7 @@ input[type=email] {
     background:rgba(0,0,0,0);
     border:none;
     border-bottom: 2px solid $grey;
+    border-radius: unset;
     width:100%;
     color: $grey;
     &:focus,
@@ -110,10 +119,11 @@ input[type=checkbox] {
         margin-right: 10px;
         display: inline-block;
         vertical-align: text-top;
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         background: $black2;
         border: 2px solid $grey;
+        border-radius: 3px;
     }
 
     // Box hover
@@ -148,14 +158,10 @@ input[type=checkbox] {
         content: '✓';
         font-size:80px;
         position: absolute;
-        left: 2px;
-        bottom: -20px;
+        left: 0px;
+        bottom: -23px;
     }
 }
-
-
-
-
 
 .checkbox-submit.container {
     display: flex;
@@ -167,7 +173,8 @@ input[type=checkbox] {
 button[type=submit] {
     color: $white;
     font-weight: 600;
-    border-radius: 40px;
+    letter-spacing: 1.25px;
+    border-radius: 35px;
     padding: 20px;
     background: $black3;
     border: none;
@@ -181,27 +188,29 @@ button[type=submit] {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    div {
-        padding:0px 0px;
-    }
 }
 
 .frm_hidden {
     visibility: hidden;
-}
-
-.frm_full {
-    width: 100%;
-    display: flex;
-    flex-direction: column-reverse;
+    height:0;
+    width:0;
+    padding:0;
+    margin:0;
 }
 
 .frm_half {
     width: 50%;
 }
 
+.frm_full {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 15px 0px;
+}
+
 .frm_full.last-full {
-    padding-bottom: 40px;
+    padding-bottom: 30px;
 }
 
 .frm_checkbox label {

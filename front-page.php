@@ -25,7 +25,7 @@ if (get_field('gallery_videos')) {
     <div class="bio-container">
         <?php foreach($person as $per) { echo
             '<div class="bio ' . $per['person_class'] . '">
-                <div class="bio-image"></div>
+                <div class="bio-image" style="background-image: url(' . $per['person_image'] . '"></div>
                 <div class="bio-info">
                     <h2 class="bio-name">' . $per['person_name'] . '</h2>
                     <p class="bio-description">' . $per['person_info'] . '</p>
@@ -58,7 +58,7 @@ if (get_field('gallery_videos')) {
                     <?php foreach($person as $person) { echo
                     
                         '<div class="item person">
-                            <div class="person-image ' . $person['person_class'] . '"></div>
+                            <div class="person-image ' . $person['person_class'] . '" style="background-image: url(' . $person['person_image'] . '"></div>
                             <div class="person-info">
                                 <div class="person-name">' . $person['person_name'] . '</div>
                                 <button id="open-' . $person['person_class'] . '" class="view-bio">VIEW BIO</button>
@@ -94,7 +94,7 @@ if (get_field('gallery_videos')) {
                 ?>
                 <?php foreach($gallery_images as $images) { echo 
                     '<div class="item gallery" style="position:relative">
-                        <img class="" src="' . $images['gallery_image'] . '" alt="' . $images['image_alt'] . '" />
+                        <div class="gallery-image" style="background-image: url(' . $images['gallery_image'] . ' " alt="' . $images['image_alt'] . '"></div>
                     </div>';}
                 ?>
             </div>
