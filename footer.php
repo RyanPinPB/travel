@@ -16,7 +16,7 @@
 			<div class="form-container">
 				<div class="form-text">
 					<h2 class="form-header">Need some<br> travel inspiration?</h2>
-					<p class="form-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacus velit, venenatis sed orci a, sollicitudin sagittis orci. Curabitur a nisi at velit consequat tempor vel in leo. Aliquam erat volutpat. Donec semper ante massa, et mollis est sollicitudin quis. Pellentesque faucibus lacus vitae.</p>
+					<p class="form-description">Everyone loves to travel. Trips provide new experiences, adventures, and memories that last a lifetime. Not only is travel fun; it provides a variety of surprising personal and health benefits. Studies show travel leads to a greater learning capacity, increased feeling of happiness and satisfaction, better family relationships, and even decreased risk of heart disease.</p>
 				</div>
 				<div class="footer-form">
 					<?php echo FrmFormsController::get_form_shortcode( array( 'id' => 2, 'title' => false, 'description' => false ) ); ?>

@@ -1,159 +1,160 @@
 .places {
-    position: relative;
+  position: relative;
 }
 
 .location {
-    margin: 40px 0px;
+  margin: 40px 0px;
 }
 
 .location-name {
-    opacity:1;
-    padding:20px;
-    margin:0;
-    line-height: 1;
+  opacity: 1;
+  padding: 20px;
+  margin: 0;
+  line-height: 1;
 }
 
 .location-description {
-    font-size:20px;
-    padding:10px 10px 20px 10px;
-    margin:0;
+  font-size: 20px;
+  padding: 10px 10px 20px 10px;
+  margin: 0;
 }
 
-// MEDIA QUERIES 
+// MEDIA QUERIES
 
-@media (min-width:400px) {
+@media (min-width: 400px) {
 }
 
-@media (min-width:450px) {
+@media (min-width: 450px) {
 }
 
-@media (min-width:500px) {
+@media (min-width: 500px) {
 }
 
-@media (min-width:675px) {
+@media (min-width: 675px) {
 }
 
-@media (min-width:769px) {
+@media (min-width: 769px) {
+  .location {
+    margin: 40px 60px;
+    .location-name {
+      text-align: left;
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  section.places {
+    position: relative;
+    margin: 300px 0px 240px 0px;
+    .section-title {
+      position: absolute;
+      left: 0;
+      top: -150px;
+      margin: 0;
+    }
     .location {
-        margin:40px 60px;
-        .location-name {
-            text-align:left;
-        }
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-column-gap: 16px;
+      margin-bottom: 140px;
+      // text-shadow: 2px 2px fade-out($color: $black, $amount: .7); helps see text over image
+      .location-picture {
+        min-height: 450px;
+        object-fit: cover;
+        object-position: center;
+      }
+      .text-align {
+        text-align: start;
+      }
+      .location-name {
+        font-size: 4rem;
+        padding-left: 0;
+        text-shadow: 2px 2px black;
+      }
+      .location-description {
+        padding-left: 0;
+        font-size: 16px;
+        line-height: 1.4;
+        background: rgba(0, 0, 0, 0.7);
+      }
+
+      .location-picture.text-left {
+        grid-column: 5 / 13;
+        grid-row: 1 / 11;
+      }
+      .location-name.text-left {
+        grid-column: 1 / 10;
+        grid-row: 6 / 7;
+        white-space: nowrap;
+      }
+      .location-description.text-left {
+        grid-column: 1 / 6;
+        grid-row: 7 / 9;
+      }
+
+      .location-picture.text-right {
+        grid-column: 1 / 9;
+        grid-row: 1 / 11;
+      }
+      .location-name.text-right {
+        grid-column: 7 / 13;
+        grid-row: 5 / 6;
+      }
+      .location-description.text-right {
+        grid-column: 7 / 13;
+        grid-row: 6 / 7;
+        padding-left: 10px;
+      }
     }
+  }
 }
 
-@media (min-width:1025px) {
-    section.places {
-        position:relative;
-        margin:300px 0px 240px 0px;
-        .section-title {
-            position: absolute;
-            left:0;
-            top:-150px;
-            margin:0;
-        }
-        .location{
-            display:grid;
-            grid-template-columns: repeat(12, 1fr);
-            grid-column-gap: 16px;
-            margin-bottom: 140px;
-            // text-shadow: 2px 2px fade-out($color: $black, $amount: .7); helps see text over image
-            .location-picture {
-                min-height:450px;
-                object-fit: cover;
-                object-position: center;
-            }
-            .text-align {
-                text-align: start;
-            }
-            .location-name {
-                font-size: 4rem;
-                padding-left:0;
-            }
-            .location-description {
-                padding-left: 0;
-                font-size: 16px;
-                line-height: 1.4;
-            }
-
-            .location-picture.text-left {
-                grid-column: 5 / 13;
-                grid-row: 1 / 11;
-
-            }
-            .location-name.text-left {
-                grid-column: 1 / 10;
-                grid-row: 6 / 7;
-                white-space: nowrap;
-            }
-            .location-description.text-left {
-                grid-column: 1 / 6;
-                grid-row: 7 / 9;
-            }
-
-            .location-picture.text-right {
-                grid-column: 1 / 9;
-                grid-row: 1 / 11;
-            }
-            .location-name.text-right {
-                grid-column: 7 / 13;
-                grid-row: 5 / 6;
-            }
-            .location-description.text-right {
-                grid-column: 7 / 13;
-                grid-row: 6 / 7;
-            }
-        }
+@media (min-width: 1350px) {
+  section.places {
+    margin: 400px 0px 310px 0px;
+    .section-title {
+      top: -190px;
     }
+    .location {
+      margin: 140px 140px;
+      .location-picture {
+        min-height: 550px;
+      }
+      .location-name {
+        font-size: 5rem;
+      }
+      .location-description {
+        font-size: 18px;
+      }
+    }
+  }
 }
 
-@media (min-width:1350px) {
-    section.places {
-        margin:400px 0px 310px 0px;
-        .section-title {
-            top:-190px;
-        }
-        .location {
-            margin:140px 140px;
-            .location-picture {
-                min-height:550px;
-            }
-            .location-name {
-                font-size: 5rem;
-            }
-            .location-description {
-                font-size: 18px;
-            }
-        }
+@media (min-width: 1600px) {
+  section.places {
+    .section-title {
+      top: -220px;
     }
-
+    .location {
+      .location-picture {
+        min-height: 650px;
+      }
+      .location-name {
+        font-size: 6rem;
+      }
+      .location-description {
+        font-size: 20px;
+      }
+    }
+  }
 }
 
-@media (min-width:1600px) {
-    section.places {
-        .section-title {
-            top:-220px;
-        }
-        .location {
-            .location-picture {
-                min-height:650px;
-            }
-            .location-name {
-                font-size: 6rem;
-            }
-            .location-description {
-                font-size: 20px;
-            }
-        }
+@media (min-width: 1900px) {
+  section.places {
+    .location {
+      .location-picture {
+        min-height: 750px;
+      }
     }
-}
-
-@media (min-width:1900px) {
-    section.places {
-        .location {
-            .location-picture {
-                min-height:750px;
-            }
-        }
-    }
+  }
 }
