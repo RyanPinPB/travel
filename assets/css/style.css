@@ -2558,6 +2558,14 @@ button[type=submit]:hover {
   margin: 0;
 }
 
+.frm_verify[aria-hidden=true] {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+  padding: 0;
+  margin: 0;
+}
+
 .frm_half {
   width: 50%;
 }

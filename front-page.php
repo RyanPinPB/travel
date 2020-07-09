@@ -61,7 +61,7 @@ if (get_field('gallery_videos')) {
                             <div class="person-image ' . $person['person_class'] . '" style="background-image: url(' . $person['person_image'] . '"></div>
                             <div class="person-info">
                                 <div class="person-name">' . $person['person_name'] . '</div>
-                                <button id="open-' . $person['person_class'] . '" class="view-bio">VIEW BIO</button>
+                                <button id="' . $person['person_class'] . '" class="view-bio">VIEW BIO</button>
                             </div>
                         </div>';}
                     ?>
